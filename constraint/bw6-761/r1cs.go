@@ -427,8 +427,8 @@ func (cs *R1CS) WriteTo(w io.Writer) (int64, error) {
 // ReadFrom attempts to decode R1CS from io.Reader using cbor
 func (cs *R1CS) ReadFrom(r io.Reader) (int64, error) {
 	dm, err := cbor.DecOptions{
-		MaxArrayElements: 134217728,
-		MaxMapPairs:      134217728,
+		MaxArrayElements: 268435456,
+		MaxMapPairs:      268435456,
 	}.DecMode()
 
 	if err != nil {
